@@ -23,6 +23,15 @@ public class AlertsTest extends BaseTest {
         dismissAlert();
         String expectedResult="You selected Cancel";
         Assert.assertEquals(alertPage.getConfirmationResult(), expectedResult, "You didn't select cancel ");
-
+    }
+    public void testPromptAlert(){
+        String alertText="John Doe";
+        String expectedResult= "You entered "+alertText;
+        var alertPage= homePage.goToAlertsFramesWindows().clickAlerts();
+        alertPage.clickPromptAlertButton();
+        setAlertText(alertText);
+        acceptAlert();
+        String actualResult= alertPage.getPromptAlertButton();
+        Assert.assertEquals(actualResult, expectedResult, "Actual and expected message don't match");
     }
 }
