@@ -18,7 +18,8 @@ public class FramesPage extends AlertsPage {
     }
 
     private void switchToSmallBox() {
-        switchToFrameIndex(1);
+        // switchToFrameIndex(1);
+        switchToFrameWebElement(find(iFrameSmallBox));
     }
     public String getTextInBigFrame(){
         switchToBigBox();
